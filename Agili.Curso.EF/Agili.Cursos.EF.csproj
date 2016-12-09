@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C3D87D83-A0FF-40EA-BC33-3C9876F72F27}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Agili.Cursos.EF</RootNamespace>
+    <AssemblyName>Agili.Cursos.EF</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Contextos\ComConfiguracaoMigrationsContext.cs" />
+    <Compile Include="Contextos\Contexto.cs" />
+    <Compile Include="Contextos\HerancaTPCContext.cs" />
+    <Compile Include="Contextos\Repository.cs" />
+    <Compile Include="Contextos\SemConfiguracaoContext.cs" />
+    <Compile Include="DTO\ProdutoDto.cs" />
+    <Compile Include="DTO\TelefoneDto.cs" />
+    <Compile Include="EntityMap\CartorioMap.cs" />
+    <Compile Include="EntityMap\PessoaFisicaMap.cs" />
+    <Compile Include="EntityMap\PessoaJuridicaMap.cs" />
+    <Compile Include="EntityMap\PessoaViewMap.cs" />
+    <Compile Include="EntityMap\PessoaMap.cs" />
+    <Compile Include="EntityMap\ItemMap.cs" />
+    <Compile Include="EntityMap\ProdutoMap.cs" />
+    <Compile Include="EntityMap\TelefoneMap.cs" />
+    <Compile Include="EntityMap\TipoTelefoneMap.cs" />
+    <Compile Include="Helpers\PagedHelpers.cs" />
+    <Compile Include="IEntityId.cs" />
+    <Compile Include="Models\Cartorio.cs" />
+    <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\PessoaView.cs" />
+    <Compile Include="Models\Produto.cs" />
+    <Compile Include="Models\Pessoa.cs" />
+    <Compile Include="Models\PessoaFisica.cs" />
+    <Compile Include="Models\PessoaJuridica.cs" />
+    <Compile Include="Models\Telefone.cs" />
+    <Compile Include="Models\TipoTelefone.cs" />
+    <Compile Include="DTO\PessoaComTelefoneDTO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
