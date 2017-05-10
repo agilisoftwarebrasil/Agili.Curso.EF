@@ -3,10 +3,12 @@ using Agili.Curso.EF.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity.Core.Objects;
 
 namespace Agili.Curso.EF.Contextos
 {
@@ -18,6 +20,8 @@ namespace Agili.Curso.EF.Contextos
             this.Configuration.LazyLoadingEnabled = false;
             Database.SetInitializer<Contexto>(null);
             this.Database.Log = message => Trace.WriteLine(message);
+            //(((IObjectContextAdapter)this).ObjectContext).CommandTimeout = 240;
+            this.Database.CommandTimeout = 240;
         }
 
         public DbSet<Telefone> Telefone { get; set; }
