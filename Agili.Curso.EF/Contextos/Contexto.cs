@@ -18,8 +18,9 @@ namespace Agili.Curso.EF.Contextos
            : base("Banco")
         {
             this.Configuration.LazyLoadingEnabled = false;
+            this.Configuration.AutoDetectChangesEnabled = false;
             Database.SetInitializer<Contexto>(null);
-            this.Database.Log = message => Trace.WriteLine(message);
+           // this.Database.Log = message => Trace.WriteLine(message);
             //(((IObjectContextAdapter)this).ObjectContext).CommandTimeout = 240;
             this.Database.CommandTimeout = 240;
         }

@@ -75,7 +75,7 @@ namespace Agili.Curso.EF.Tests
         {
             using (var con = new Contexto())
             {
-                var listaPessoa = TestHelp.GetPessoasFisica(0);
+                var listaPessoa = TestHelp.GetPessoasFisica(5000);
 
                 TestHelp.Restart();
                 con.Set<PessoaFisica>().AddRange(listaPessoa);

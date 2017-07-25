@@ -70,12 +70,12 @@ namespace Agili.Curso.EF.Tests
             return telefones;
         }
 
-        public static List<PessoaFisica> GetPessoasFisica(int contatdor)
+        public static List<PessoaFisica> GetPessoasFisica(int contatdor = 20000)
         {
             var listaPessoa = new List<PessoaFisica>();
-            for (int i = 0; i < 20000; i++)
+            for (int i = 0; i < contatdor; i++)
             {
-                var valor = contatdor++.ToString().PadLeft(10, '0');
+                var valor = i++.ToString().PadLeft(10, '0');
                 listaPessoa.Add(new PessoaFisica { Nome = "Tânia Física", CPF = valor });
             }
             return listaPessoa;
@@ -88,6 +88,7 @@ namespace Agili.Curso.EF.Tests
                    ts.Hours, ts.Minutes, ts.Seconds,
                    ts.Milliseconds / 10);
             Debug.WriteLine("Tempo: " + elapsedTime, category);
+            System.IO.File.WriteAllText($"C:\\caidtemp\\{Guid.NewGuid().ToString()}.txt", $"Tempo: {elapsedTime} {category}");
         }
 
         public static void Restart()
