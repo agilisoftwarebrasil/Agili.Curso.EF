@@ -1,13 +1,14 @@
 ﻿using Agili.Curso.EF.Contextos;
 using Agili.Curso.EF.DTO;
 using Agili.Curso.EF.Models;
+using System.Linq.Expressions;
+using System.Linq;
+
 using LinqKit;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -95,11 +96,11 @@ namespace Agili.Cursos.EF.Tests
         Expression<Func<IItem, Produto, string, int, ProdutoDto>> _projetar = (item, produto, nome, id) =>
         new ProdutoDto()
         {
-            Id = produto.Id,
-            Nome = produto.Nome + "nome " + id,
+            //Id = produto.Id,
+            //Nome = produto.Nome + "nome " + id,
             ItemId = item.Id,
             NomeItem = item.Nome,
-            Quantidade = produto.Quantidade
+            //Quantidade = produto.Quantidade
         };
 
         [TestMethod]
